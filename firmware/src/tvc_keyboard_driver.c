@@ -97,7 +97,7 @@ void UpdateMatrixOutput(void)
 	// update column lines
 
 	// lowest two bits
-	data_low = data & 0x03;
+	data_low = (data & 0x03) << 8;
 	mPORTAClearBits(~data_low);
 	mPORTASetBits(data_low);
 

@@ -290,6 +290,8 @@ int main (void)
 
 	value = SYSTEMConfigWaitStatesAndPB( GetSystemClock() );
 
+	mJTAGPortEnable(DEBUG_JTAGPORT_OFF);
+
 	// Enable the cache for the best performance
 	CheKseg0CacheOn();
 
@@ -303,6 +305,10 @@ int main (void)
 
 	INTEnableSystemMultiVectoredInt();
 
+	// Init status LED
+	mPORTCSetBits(BIT_0);
+	mPORTCSetPinsDigitalOut(BIT_0);
+
 	//DBINIT();
 
 	// Initialize USB layers
@@ -315,6 +321,7 @@ int main (void)
 		switch (App_State_Keyboard)
 		{
 			case DEVICE_NOT_CONNECTED:
+				mPORTCSetBits(BIT_0);
 				USBTasks();
 				if (DisplayDeatachOnce == FALSE)
 				{
@@ -329,6 +336,7 @@ int main (void)
 				}
 				break;
 			case DEVICE_CONNECTED:
+				mPORTCClearBits(BIT_0);
 				App_State_Keyboard = READY_TO_TX_RX_REPORT;
 				if (DisplayConnectOnce == FALSE)
 				{
