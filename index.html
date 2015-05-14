@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Tvc-usb-keyboard : USB Keyboard Interface for Videoton TV Computer">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Tvc-usb-keyboard</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hightower70/tvc-usb-keyboard">View on GitHub</a>
+
+          <h1 id="project_title">Tvc-usb-keyboard</h1>
+          <h2 id="project_tagline">USB Keyboard Interface for Videoton TV Computer</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hightower70/tvc-usb-keyboard/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hightower70/tvc-usb-keyboard/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="tvc-usb-keyboard-interface" class="anchor" href="#tvc-usb-keyboard-interface" aria-hidden="true"><span class="octicon octicon-link"></span></a>TVC USB Keyboard Interface</h1>
+
+<p>Hardware and firmware for connecting modern USB keyboard to the vintage Videoton TV Computer. The interface PCB can be mounted into the place on the original joystick connector, so no irreversible modification need on the computer.</p>
+
+<h2>
+<a id="the-hardware" class="anchor" href="#the-hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>The hardware</h2>
+
+<p>The hardware consists only one active element (except the power regulator). This is the PIC32MX250F128D microcontroller. The microcontroller has an USB host port, and it's IO pins directly connected to the keyboard circuit of the TVC. It receives the four bit keyboard row selection signal and issues the eight bit keyboard column signal. The column signal outputs are open-drain outputs, so it can be used work parallel with the original keyboard.</p>
+
+<h2>
+<a id="the-firmware" class="anchor" href="#the-firmware" aria-hidden="true"><span class="octicon octicon-link"></span></a>The firmware</h2>
+
+<p>The firmware handles the USB host functions and provides an interrupt routine for the keyboard row scan function. Currently only Hungarian keyboard is supported, but the firmware easily can be adapted to other keyboard configuration. </p>
+
+<h2>
+<a id="further-development" class="anchor" href="#further-development" aria-hidden="true"><span class="octicon octicon-link"></span></a>Further development</h2>
+
+<p>The near future USB game controller support feature is planned together with english keyboard support. </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Tvc-usb-keyboard maintained by <a href="https://github.com/hightower70">hightower70</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
